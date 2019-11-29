@@ -2,30 +2,30 @@ package com.example.weatherapp.Model;
 
 public class Coord {
 
-    private int lon;
-    private int lat;
+    private double lon;
+    private double lat;
 
     public Coord() {
     }
 
-    public int getLon() {
+    public double getLon() {
         return lon;
     }
 
-    public void setLon(int lon) {
+    public void setLon(double lon) {
         this.lon = lon;
     }
 
-    public int getLat() {
+    public double getLat() {
         return lat;
     }
 
-    public void setLat(int lat) {
+    public void setLat(double lat) {
         this.lat = lat;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return new StringBuilder("[").append(this.lat).append(',').append(this.lon).append(']').toString();
     }
 }

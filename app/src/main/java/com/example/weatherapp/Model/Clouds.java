@@ -1,10 +1,9 @@
 package com.example.weatherapp.Model;
 
 public class Clouds {
+    private int all;
 
-    public int all;
-
-    private Clouds() {
+    public Clouds() {
     }
 
     public int getAll() {
