@@ -34,7 +34,7 @@ public class WeatherTodayFragment extends Fragment {
 
     ImageView img_weather;
     TextView txt_city_name, txt_humidity, txt_sunrise, txt_sunset, txt_pressure,
-            txt_temperature, txt_description, txt_date_time, txt_wind, txt_geo_coord;
+            txt_temperature, txt_date_time, txt_wind, txt_geo_coord;
     LinearLayout weather_panel;
     ProgressBar loading;
 
@@ -73,7 +73,7 @@ public class WeatherTodayFragment extends Fragment {
         txt_sunset= itemView.findViewById(R.id.txt_sunset);
         txt_pressure= itemView.findViewById(R.id.txt_pressure);
         txt_temperature= itemView.findViewById(R.id.txt_temperature);
-        txt_description= itemView.findViewById(R.id.txt_description);
+        //txt_description= itemView.findViewById(R.id.txt_description);
         txt_date_time= itemView.findViewById(R.id.txt_date_time);
         txt_wind= itemView.findViewById(R.id.txt_wind);
         txt_geo_coord= itemView.findViewById(R.id.txt_geo_coord);
@@ -105,8 +105,8 @@ public class WeatherTodayFragment extends Fragment {
 
                         //Load Info
                         txt_city_name.setText(weatherResult.getName() + "   " + weatherResult.getSys().getCountry());
-                        txt_description.setText(new StringBuilder("Current weather in ")
-                                .append(weatherResult.getName()).toString());
+                        // txt_description.setText(new StringBuilder("Current weather in ")
+                        //        .append(weatherResult.getName()).toString());
                         txt_temperature.setText(new StringBuilder(
                                 String.valueOf(weatherResult.getMain().getTemp())).append(" °C").toString());
                         txt_date_time.setText(Common.convertUnixToDate(weatherResult.getDt()));

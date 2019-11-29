@@ -31,11 +31,11 @@ import retrofit2.Retrofit;
  */
 public class ForecastFragment extends Fragment {
 
-    CompositeDisposable compositeDisposable;
-    IOpenWeatherMap mService;
+    private CompositeDisposable compositeDisposable;
+    private IOpenWeatherMap mService;
 
-    TextView txt_city_name,txt_geo_coord;
-    RecyclerView recycler_forecast;
+    private TextView txt_city_name,txt_geo_coord;
+    private RecyclerView recycler_forecast;
 
 
     static ForecastFragment instance;
@@ -63,9 +63,9 @@ public class ForecastFragment extends Fragment {
         txt_city_name = itemView.findViewById(R.id.txt_city_name);
         txt_geo_coord = itemView.findViewById(R.id.geo_coord);
 
-        recycler_forecast = (RecyclerView)itemView.findViewById(R.id.recycler_forecast);
+        recycler_forecast = itemView.findViewById(R.id.recycler_forecast);
         recycler_forecast.setHasFixedSize(true);
-        recycler_forecast.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,false));
+        recycler_forecast.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false));
 
         getForecastInformation();
 
