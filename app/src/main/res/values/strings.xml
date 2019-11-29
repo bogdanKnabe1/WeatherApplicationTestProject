@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">WeatherApp</string>
-
     <string name="hello_blank_fragment">Today weather</string>
+    <string name="hello_blank_future_fragment">5 day weather</string>
 </resources>

@@ -20,7 +20,7 @@
 
         <TextView
             android:id="@+id/txt_date"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp"
             android:textStyle="bold"
             android:text="Wednesday"
@@ -43,7 +43,7 @@
                 android:id="@+id/txt_temperature"
                 android:layout_marginLeft="8dp"
                 android:text="14 C°"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
 
         <TextView
             android:id="@+id/txt_description"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp"
             android:textStyle="bold"
             android:text="Wednesday"
