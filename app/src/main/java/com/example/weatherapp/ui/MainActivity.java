@@ -5,7 +5,10 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
-
+import android.view.LayoutInflater;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private int[] tabIcons = {
+            R.drawable.today_sun,
+            R.drawable.five_days
+    };
 
     private ConstraintLayout constrLayout;
 
@@ -87,28 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 }).check();
     }
 
-    /*private BottomNavigationView.OnNavigationItemSelectedListener navListner = new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-            Fragment selectedFragment = null;
 
-            switch (menuItem.getItemId()){
-                case R.id.currentWeatherFragment:
-                    selectedFragment = new WeatherTodayFragment();
-                    break;
-                case R.id.futureListWeatherFragment:
-                    selectedFragment = new ForecastFragment();
-                    break;
-            }
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, selectedFragment)
-                    .commit();
-
-            return true;
-        }
-
-    };*/
 
     private void buildLocationCallBack() {
         locationCallback = new LocationCallback(){
@@ -135,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter((getSupportFragmentManager()));
         adapter.addFragment(WeatherTodayFragment.getInstance(),"Today");
-        adapter.addFragment(ForecastFragment.getInstance(),"5 DAY FORECAST");
+        adapter.addFragment(ForecastFragment.getInstance(),"FORECAST");
         viewPager.setAdapter(adapter);
     }
 

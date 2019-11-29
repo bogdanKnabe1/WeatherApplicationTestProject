@@ -20,7 +20,7 @@
             android:id="@+id/txt_city_name"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorText"
             android:text="Weather in London, GB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -29,7 +29,7 @@
             android:id="@+id/geo_coord"
             android:textSize="18sp"
             android:textStyle="italic"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorText"
             android:text="[35.42,45.65]"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
