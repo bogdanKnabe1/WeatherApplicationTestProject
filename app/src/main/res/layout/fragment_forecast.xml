@@ -7,6 +7,7 @@
 
 
     <LinearLayout
+        android:layout_marginTop="55dp"
         android:id="@+id/main_info"
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
@@ -14,13 +15,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:text="5 DAYS WEATHER FORECAST"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/txt_city_name"
@@ -38,7 +32,8 @@
             android:textColor="@color/colorPrimaryDark"
             android:text="[35.42,45.65]"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
 
 
     </LinearLayout>

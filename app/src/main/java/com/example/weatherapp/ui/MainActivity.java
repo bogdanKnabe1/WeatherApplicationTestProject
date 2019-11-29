@@ -1,16 +1,18 @@
 package com.example.weatherapp.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.viewpager.widget.ViewPager;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
+
+
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.weatherapp.Adapter.ViewPagerAdapter;
 import com.example.weatherapp.Common.Common;
@@ -20,6 +22,7 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.karumi.dexter.Dexter;
@@ -37,12 +40,11 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    private CoordinatorLayout coordinatorLayout;
+    private ConstraintLayout constrLayout;
 
     private FusedLocationProviderClient fusedLocationProviderClient;
     private LocationCallback locationCallback;
     private LocationRequest locationRequest;
-
 
 
     @Override
@@ -50,7 +52,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        coordinatorLayout = findViewById(R.id.root_view);
+//        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+//        bottomNav.setOnNavigationItemSelectedListener(navListner);
+
+        constrLayout = findViewById(R.id.root_view);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -76,11 +81,34 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
-                        Snackbar.make(coordinatorLayout,"Permission Denied",Snackbar.LENGTH_LONG)
+                        Snackbar.make(constrLayout,"Permission Denied",Snackbar.LENGTH_LONG)
                                 .show();
                     }
                 }).check();
     }
+
+    /*private BottomNavigationView.OnNavigationItemSelectedListener navListner = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            Fragment selectedFragment = null;
+
+            switch (menuItem.getItemId()){
+                case R.id.currentWeatherFragment:
+                    selectedFragment = new WeatherTodayFragment();
+                    break;
+                case R.id.futureListWeatherFragment:
+                    selectedFragment = new ForecastFragment();
+                    break;
+            }
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, selectedFragment)
+                    .commit();
+
+            return true;
+        }
+
+    };*/
 
     private void buildLocationCallBack() {
         locationCallback = new LocationCallback(){

@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:gravity="center_horizontal"
+    android:id="@+id/root_view"
     tools:context=".TodayWeatherFragment"
 
 
@@ -12,6 +13,7 @@
 
 
     <ImageView
+        android:layout_marginTop="15dp"
         android:id="@+id/img_weather"
         android:layout_width="100dp"
         android:layout_height="100dp"
