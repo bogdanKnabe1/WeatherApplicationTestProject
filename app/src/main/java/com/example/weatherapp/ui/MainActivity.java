@@ -95,6 +95,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /*private BottomNavigationView.OnNavigationItemSelectedListener navListner = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            Fragment selectedFragment = null;
+
+            switch (menuItem.getItemId()){
+                case R.id.currentWeatherFragment:
+                    selectedFragment = new WeatherTodayFragment();
+                    break;
+                case R.id.futureListWeatherFragment:
+                    selectedFragment = new ForecastFragment();
+                    break;
+            }
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, selectedFragment)
+                    .commit();
+
 
     private void buildLocationCallBack() {
         locationCallback = new LocationCallback(){
