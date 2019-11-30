@@ -42,10 +42,6 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private int[] tabIcons = {
-            R.drawable.today_sun,
-            R.drawable.five_days
-    };
 
     private ConstraintLayout constrLayout;
 
@@ -59,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-//        bottomNav.setOnNavigationItemSelectedListener(navListner);
 
         constrLayout = findViewById(R.id.root_view);
 
@@ -94,24 +88,6 @@ public class MainActivity extends AppCompatActivity {
                 }).check();
     }
 
-
-    /*private BottomNavigationView.OnNavigationItemSelectedListener navListner = new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-            Fragment selectedFragment = null;
-
-            switch (menuItem.getItemId()){
-                case R.id.currentWeatherFragment:
-                    selectedFragment = new WeatherTodayFragment();
-                    break;
-                case R.id.futureListWeatherFragment:
-                    selectedFragment = new ForecastFragment();
-                    break;
-            }
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, selectedFragment)
-                    .commit();
 
 
     private void buildLocationCallBack() {
