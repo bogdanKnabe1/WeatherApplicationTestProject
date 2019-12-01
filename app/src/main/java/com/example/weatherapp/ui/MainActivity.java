@@ -2,6 +2,7 @@ package com.example.weatherapp.ui;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
@@ -104,6 +105,10 @@ public class MainActivity extends AppCompatActivity {
                 viewPager= findViewById(R.id.view_pager);
                 setupViewPager(viewPager);
                 tabLayout = findViewById(R.id.tabs);
+                //way to change color of tabs text +
+                tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#FFC107"));
+                tabLayout.setSelectedTabIndicatorHeight((int) (5 * getResources().getDisplayMetrics().density));
+                tabLayout.setTabTextColors(Color.parseColor("#000000"), Color.parseColor("#000000"));
                 tabLayout.setupWithViewPager(viewPager);
 
                 // Log
