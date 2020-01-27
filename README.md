@@ -1,4 +1,4 @@
-# WeatherApp
+# WeatherApplicationTestProject
 Simple weather app.
 Working with:
  - OpenWeather API(fetching data for today and future 5 days)
